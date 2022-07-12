@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Ref } from 'vue'
-import { useMath } from '@vueuse/math'
+import { useMin } from '@vueuse/math'
 const number1: Ref<number> = ref(10)
 const number2: Ref<number> = ref(20)
-const { min } = useMath()
-const result = min(number1, number2)
+const result = useMin(number1, number2)
 // result.value is 10
 </script>
 
@@ -32,7 +31,7 @@ const result = min(number1, number2)
       </button>
     </div>
     <div>
-      result = min(number1, number2) is {{ result }}
+      result = useMin(number1, number2) is {{ result }}
     </div>
   </div>
 </template>
